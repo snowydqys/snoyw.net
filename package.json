@@ -19,5 +19,8 @@
     "sass": "^1.77.8",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.4"
   }
 }
