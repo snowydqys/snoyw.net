@@ -22,13 +22,17 @@ import { Image } from "astro:assets";
     <div class="flex flex-col gap-1 items-center">
       <h1 class="text-3xl lg:text-4xl font-bold">snowydqys</h1>
       <h2
+        id="sub-heading"
         class="text-sm lg:text-base italic opacity-60"
         title="Different ways of calling me"
       >
         "snowy", "snoyw", "snow"
       </h2>
     </div>
-    <p class="text-wrap max-w-4xl text-center text-base lg:text-lg">
+    <p
+      id="main-text"
+      class="text-wrap max-w-4xl text-center text-base lg:text-lg"
+    >
       hii im snowy, your average amateur anime degenerate!!
       <br />
       i like to watch anime, play games, and code in my free time.
@@ -108,11 +112,62 @@ import { Image } from "astro:assets";
   </main>
 </Layout>
 
+<script>
+  // @ts-ignore
+  import Konami from "konami";
+
+  let susified = false;
+
+  const konami = new Konami(() => {
+    if (!susified) {
+      const audio = new Audio("/sus.mp3");
+      audio.play();
+
+      susified = true;
+
+      const snows = document.querySelectorAll(
+        ".snow"
+      ) as NodeListOf<HTMLElement>;
+
+      snows.forEach((snow) => {
+        snow.style.background = `url("/sus.svg")`;
+      });
+
+      const snowWrapper = document.querySelector(
+        ".snow-wrapper"
+      ) as HTMLElement;
+
+      snowWrapper.style.filter = "drop-shadow(0 0 10px #f00000)";
+
+      const subHeading = document.getElementById("sub-heading") as HTMLElement;
+      subHeading.innerText = "The Impostor";
+
+      const mainText = document.getElementById("main-text") as HTMLElement;
+      mainText.innerText =
+        "WHEN THE IMPOSTOR IS SUS WHEN THE IMPOSTOR IS SUS WHEN THE IMPOSTOR IS SUS WHEN THE IMPOSTOR IS SUS";
+
+      const avatar = document.querySelector(".avatar") as HTMLElement;
+      avatar.classList.add("avatar-sus");
+      avatar.classList.remove("avatar");
+    } else {
+      const audio = new Audio("/amongus.mp3");
+      audio.volume = 0.5;
+      audio.play();
+    }
+  });
+</script>
+
 <style lang="scss">
   .avatar {
     border: 2px solid transparent;
     border-radius: 100%;
-    background: linear-gradient(180deg, rgb(189, 218, 233), #85d4ff) border-box;
+    background: linear-gradient(0deg, rgb(189, 218, 233), #85d4ff) border-box;
+  }
+
+  .avatar-sus {
+    border: 2px solid transparent;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #ff0000, #ffafaf) border-box;
   }
 
   .fuwamoco-link {
