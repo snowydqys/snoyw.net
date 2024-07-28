@@ -1,0 +1,94 @@
+---
+import SnowBackground from "../components/SnowBackground.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  url?: string;
+}
+
+const { title, description, url } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.snoyw.net/snowflake.png"
+    />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title || "snoyw.net"}</title>
+    <meta name="title" content={title || "snoyw.net"} />
+    <meta
+      name="description"
+      content={description ||
+        "the website of snowydqys, your average amateur anime degenerate!!"}
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url || "https://snoyw.net"} />
+    <meta property="og:title" content={title || "snoyw.net"} />
+    <meta
+      property="og:description"
+      content={description ||
+        "the website of snowydqys, your average amateur anime degenerate!!"}
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url || "https://snoyw.net"} />
+    <meta property="twitter:title" content={title || "snoyw.net"} />
+    <meta
+      property="twitter:description"
+      content={description ||
+        "the website of snowydqys, your average amateur anime degenerate!!"}
+    />
+  </head>
+  <body>
+    <SnowBackground />
+    <slot />
+
+    <footer class="text-center text-white text-sm m-8">
+      <p>
+        made with{" "}
+        <a href="https://astro.build" class="underline"> astro</a>{" "} | hosted
+        on{" "}
+        <a href="https://pages.cloudflare.com" class="underline">
+          cloudflare pages</a
+        >
+      </p>
+    </footer>
+  </body>
+  <style is:global>
+    :root {
+      --accent: 136, 58, 234;
+      --accent-light: 224, 204, 250;
+      --accent-dark: 49, 10, 101;
+      --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        white 60%
+      );
+    }
+    html {
+      font-family: system-ui, sans-serif;
+      background: #13151a;
+    }
+    code {
+      font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+    }
+  </style>
+</html>

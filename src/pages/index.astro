@@ -1,0 +1,147 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+import clarapfp from "../assets/clara_pfp.jpg"; // Image is 184x184px
+import paws from "../assets/twemoji_paw.svg"; // Image is 184x184px
+import { Image } from "astro:assets";
+---
+
+<Layout
+  title="snowydqys"
+  description="hii im snowydqys, your amateur anime degenerate!!"
+  url="https://snoyw.net"
+>
+  <main class="w-full flex flex-col gap-4 items-center text-white">
+    <Image
+      src={clarapfp}
+      alt="Clara Avatar"
+      class="w-48 h-48 lg:w-64 lg:h-64 rounded-full mt-8 avatar"
+      title="Clara, from Honkai Star Rail"
+    />
+    <div class="flex flex-col gap-1 items-center">
+      <h1 class="text-3xl lg:text-4xl font-bold">snowydqys</h1>
+      <h2
+        class="text-sm lg:text-base italic opacity-60"
+        title="Different ways of calling me"
+      >
+        "snowy", "snoyw", "snow"
+      </h2>
+    </div>
+    <p class="text-wrap max-w-4xl text-center text-base lg:text-lg">
+      hii im snowy, your average amateur anime degenerate!!
+      <br />
+      i like to watch anime, play games, and code in my free time.
+      <br />
+      i also watch vtubers, with my kami oshi being <a
+        href="https://youtube.com/@FUWAMOCOch"
+        class="fuwamoco-link">FUWAMOCO</a
+      >.
+      <br />
+      feel free to contact me and say hi!! BAU BAU!!
+      <Image class="inline w-6 h-6" src={paws} alt="🐾" />
+    </p>
+    <ul role="list" class="flex flex-col gap-4">
+      <Card
+        href="#"
+        title="Discord - @snowydqys"
+        body="my discord account, where you can add me as a friend!!"
+        icon="fa6-brands:discord"
+        customAccent="88,101,242"
+        customAccentLight="160,167,248"
+      />
+      <Card
+        href="https://discord.gg/fxB3u2kxQ4"
+        title="Snowy's Igloo"
+        body="my personal discord server, where i hang out and chat with friends"
+        icon="fa6-brands:discord"
+        customAccent="88,101,242"
+        customAccentLight="160,167,248"
+      />
+      <Card
+        href="mailto:snowydqys@duck.com"
+        title="Email - snowydqys@duck.com"
+        body="you can also contact me via email, if you prefer (might take a while to respond)"
+        icon="mdi:email"
+      />
+      <Card
+        href="https://twitter.com/snowydqys"
+        title="X - @snowydqys"
+        body="my X (formerly Twitter) account where i mostly like and retweet vtuber stuff"
+        icon="fa6-brands:x-twitter"
+        customAccent="0,0,0"
+        customAccentLight="125,125,125"
+      />
+      <Card
+        href="https://steamcommunity.com/id/snowydqys"
+        title="Steam - snowydqys"
+        body="my steam account, where i play games and stuff. (you are not allowed to judge me for my obsession with NEKOPARA)"
+        icon="fa6-brands:steam"
+        customAccent="0,173,238"
+        customAccentLight="179,235,255"
+      />
+      <Card
+        href="https://youtube.com/@snowydqys"
+        title="YouTube - @snowydqys"
+        body="my youtube account, i don't upload but i use this to watch vtuber clips and stuff"
+        icon="fa6-brands:youtube"
+        customAccent="255,0,0"
+        customAccentLight="200,153,153"
+      />
+      <Card
+        href="https://github.com/snowydqys"
+        title="GitHub - @snowydqys"
+        body="my github account, where i store some of my projects and stuff"
+        icon="fa6-brands:github"
+        customAccent="23,21,21"
+        customAccentLight="177,169,169"
+      />
+      <Card
+        href="https://reddit.com/u/snowyniqhts"
+        title="Reddit - @snowyniqhts"
+        body='my reddit account, where i mostly lurk and upvote stuff. not very active here. (also to the person who took the username "snowydqys" on reddit, i will find you <3)'
+        icon="fa6-brands:reddit-alien"
+        customAccent="255,69,0"
+        customAccentLight="255,210,194"
+      />
+    </ul>
+  </main>
+</Layout>
+
+<style lang="scss">
+  .avatar {
+    border: 2px solid transparent;
+    border-radius: 100%;
+    background: linear-gradient(180deg, rgb(189, 218, 233), #85d4ff) border-box;
+  }
+
+  .fuwamoco-link {
+    /* text gradient */
+    background: linear-gradient(
+      45deg,
+      rgba(86, 180, 254, 1) 0%,
+      rgba(171, 169, 226, 1) 50%,
+      rgba(255, 157, 198, 1) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    /* underline gradient */
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 95%;
+      width: 100%;
+      left: 0;
+      height: 1px;
+      background: linear-gradient(
+        45deg,
+        rgba(86, 180, 254, 1) 0%,
+        rgba(171, 169, 226, 1) 50%,
+        rgba(255, 157, 198, 1) 100%
+      );
+    }
+  }
+</style>
