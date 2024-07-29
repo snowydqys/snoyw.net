@@ -2,8 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 
-import clarapfp from "../assets/clara_pfp.jpg"; // Image is 184x184px
-import paws from "../assets/twemoji_paw.svg"; // Image is 184x184px
+import clarapfp from "../assets/clara_pfp.jpg";
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 ---
 
@@ -43,7 +43,7 @@ import { Image } from "astro:assets";
       >.
       <br />
       feel free to contact me and say hi!! BAU BAU!!
-      <Image class="inline w-6 h-6" src={paws} alt="🐾" />
+      <Icon name="twemoji:paw-prints" class="inline" size={24} />
     </p>
     <ul role="list" class="flex flex-col gap-4">
       <Card
@@ -99,6 +99,22 @@ import { Image } from "astro:assets";
         icon="fa6-brands:github"
         customAccent="23,21,21"
         customAccentLight="177,169,169"
+      />
+      <Card
+        href="https://anilist.co/user/snowydqys/"
+        title="AniList - @snowydqys"
+        body="my anilist account, where i keep track of the anime i've watched and stuff (done automatically. not 100% accurate)"
+        icon="simple-icons:anilist"
+        customAccent="2,169,255"
+        customAccentLight="200,245,255"
+      />
+      <Card
+        href="https://twitch.tv/snowydqys"
+        title="Twitch - @snowydqys"
+        body="my twitch account, where i watch vtubers on rare occasions"
+        icon="fa6-brands:twitch"
+        customAccent="145,70,255"
+        customAccentLight="203,168,255"
       />
       <Card
         href="https://reddit.com/u/snowyniqhts"

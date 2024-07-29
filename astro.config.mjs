@@ -19,7 +19,12 @@ export default defineConfig({
           "twitch",
           "steam",
         ],
+        "simple-icons": ["anilist"],
+        twemoji: ["paw-prints"],
       },
     }),
   ],
+  image: {
+    domains: ["cdn.snoyw.net"],
+  },
 });
