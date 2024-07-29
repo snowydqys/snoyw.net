@@ -52,14 +52,19 @@ const { title, description, url } = Astro.props;
     <SnowBackground />
     <slot />
 
-    <footer class="text-center text-white text-sm m-8">
+    <footer class="text-center text-white text-sm m-8 flex flex-col gap-1">
       <p>
         made with{" "}
-        <a href="https://astro.build" class="underline"> astro</a>{" "} | hosted
+        <a href="https://astro.build" class="underline"> astro</a>{" "} • hosted
         on{" "}
         <a href="https://pages.cloudflare.com" class="underline">
           cloudflare pages</a
         >
+      </p>
+      <p>
+        <a href="https://github.com/snowydqys/snoyw.net" class="underline">
+          source code
+        </a>
       </p>
     </footer>
   </body>
