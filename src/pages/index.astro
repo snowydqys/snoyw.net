@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import HorizontalSeparator from "../components/HorizontalSeparator.astro";
 
 import clarapfp from "../assets/clara_pfp.jpg";
 import { Icon } from "astro-icon/components";
@@ -46,6 +47,8 @@ import { Image } from "astro:assets";
       <Icon name="twemoji:paw-prints" class="inline" size={24} />
     </p>
     <ul role="list" class="flex flex-col gap-4">
+      <HorizontalSeparator>Main Contacts</HorizontalSeparator>
+
       <Card
         href="https://discord.com/users/1028040976658341998"
         title="Discord - @snowydqys"
@@ -57,7 +60,7 @@ import { Image } from "astro:assets";
       <Card
         href="https://discord.gg/fxB3u2kxQ4"
         title="Snowy's Igloo"
-        body="my personal discord server, where i hang out and chat with friends"
+        body="my personal discord server, where i hang out and chat with friends (a bit dead lol)"
         icon="fa6-brands:discord"
         customAccent="88,101,242"
         customAccentLight="160,167,248"
@@ -76,6 +79,9 @@ import { Image } from "astro:assets";
         customAccent="0,0,0"
         customAccentLight="125,125,125"
       />
+
+      <HorizontalSeparator>Other Socials</HorizontalSeparator>
+
       <Card
         href="https://steamcommunity.com/id/snowydqys"
         title="Steam - snowydqys"

@@ -1,0 +1,15 @@
+<div class="grid grid-cols-[1fr_auto_1fr] items-center gap-2 my-2">
+  <div class="horizontal-separator"></div>
+  <div>
+    <slot />
+  </div>
+  <div class="horizontal-separator"></div>
+</div>
+
+<style>
+  .horizontal-separator {
+    height: 1px;
+    background-color: white;
+    opacity: 0.8;
+  }
+</style>

@@ -20,7 +20,7 @@ export default defineConfig({
           "steam",
         ],
         "simple-icons": ["anilist"],
-        twemoji: ["paw-prints"],
+        twemoji: ["paw-prints", "snowflake"],
       },
     }),
   ],
