@@ -135,12 +135,9 @@ import { Image } from "astro:assets";
 </Layout>
 
 <script>
-  // @ts-ignore
-  import Konami from "konami";
-
   let susified = false;
 
-  const konami = new Konami(() => {
+  const susify = () => {
     if (!susified) {
       const audio = new Audio("/sus.mp3");
       audio.play();
@@ -166,7 +163,7 @@ import { Image } from "astro:assets";
 
       const mainText = document.getElementById("main-text") as HTMLElement;
       mainText.innerText =
-        "WHEN THE IMPOSTOR IS SUS WHEN THE IMPOSTOR IS SUS WHEN THE IMPOSTOR IS SUS WHEN THE IMPOSTOR IS SUS";
+        "WHEN THE IMPOSTOR IS SUS\nWHEN THE IMPOSTOR IS SUS\nWHEN THE IMPOSTOR IS SUS\nWHEN THE IMPOSTOR IS SUS";
 
       const avatar = document.querySelector(".avatar") as HTMLElement;
       avatar.classList.add("avatar-sus");
@@ -175,6 +172,33 @@ import { Image } from "astro:assets";
       const audio = new Audio("/amongus.mp3");
       audio.volume = 0.5;
       audio.play();
+    }
+  };
+
+  let sequenceStep = 0;
+  let sequenceRequired = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+  ];
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === sequenceRequired[sequenceStep]) {
+      sequenceStep++;
+
+      if (sequenceStep === sequenceRequired.length) {
+        susify();
+        sequenceStep = 0;
+      }
+    } else {
+      sequenceStep = 0;
     }
   });
 </script>
