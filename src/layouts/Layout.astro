@@ -67,6 +67,18 @@ const { title, description, url } = Astro.props;
         </a>
       </p>
     </footer>
+
+    <!-- analytics tracking script (privacy-respecting with shynet) -->
+    <noscript>
+      <img
+        src="https://analytics.snoyw.net/ingress/c4ac1452-b195-47ee-8d31-58314d0e3f35/pixel.gif"
+      />
+    </noscript>
+    <script
+      type="text/partytown"
+      defer
+      src="https://analytics.snoyw.net/ingress/c4ac1452-b195-47ee-8d31-58314d0e3f35/script.js"
+    ></script>
   </body>
   <style is:global>
     :root {
