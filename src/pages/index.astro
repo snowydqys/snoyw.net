@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import HorizontalSeparator from "../components/HorizontalSeparator.astro";
 
-import clarapfp from "../assets/clara_pfp.jpg";
+import fuwawapfp from "../assets/fuwawa_icomochi_kryomel_pfp.png";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 ---
@@ -15,10 +15,10 @@ import { Image } from "astro:assets";
 >
   <main class="w-full flex flex-col gap-4 items-center text-white">
     <Image
-      src={clarapfp}
-      alt="Clara Avatar"
+      src={fuwawapfp}
+      alt="Fuwawa Avatar; art by Icomochi, edit by Kryomel"
       class="w-48 h-48 lg:w-64 lg:h-64 rounded-full mt-8 avatar"
-      title="Clara, from Honkai Star Rail"
+      title="Fuwawa Avatar; art by Icomochi, edit by Kryomel"
     />
     <div class="flex flex-col gap-1 items-center">
       <h1 class="text-3xl lg:text-4xl font-bold">snowydqys</h1>
@@ -58,18 +58,21 @@ import { Image } from "astro:assets";
         customAccentLight="160,167,248"
       />
       <Card
-        href="https://u.snoyw.net/igloo"
-        title="Snowy's Igloo"
-        body="my discord server, where i hang out and chat with friends (a bit dead lol)"
-        icon="fa6-brands:discord"
-        customAccent="88,101,242"
-        customAccentLight="160,167,248"
-      />
-      <Card
         href="mailto:snowydqys@duck.com"
         title="Email - snowydqys@duck.com"
         body="you can also contact me via email, if you prefer (might take a while to respond)"
         icon="mdi:email"
+      />
+
+      <HorizontalSeparator>Other Socials</HorizontalSeparator>
+
+      <Card
+        href="https://u.snoyw.net/bsky"
+        title="Bluesky - @snoyw.net"
+        body="my new bluesky account, where i go to avoid the X (formerly Twitter) drama"
+        icon="fa6-brands:bluesky"
+        customAccent="0, 133, 255"
+        customAccentLight="189,223,255"
       />
       <Card
         href="https://u.snoyw.net/twitter"
@@ -79,9 +82,6 @@ import { Image } from "astro:assets";
         customAccent="0,0,0"
         customAccentLight="125,125,125"
       />
-
-      <HorizontalSeparator>Other Socials</HorizontalSeparator>
-
       <Card
         href="https://u.snoyw.net/steam"
         title="Steam - snowydqys"
@@ -117,7 +117,7 @@ import { Image } from "astro:assets";
       <Card
         href="https://u.snoyw.net/mfc"
         title="MyFigureCollection - @snowydqys"
-        body="see how much money ive wasted on anime figures and stuff"
+        body="see how much money ive wasted on anime figures and other stuff"
         icon="mfc"
         customAccent="89,166,84"
         customAccentLight="178,247,173"
@@ -215,7 +215,7 @@ import { Image } from "astro:assets";
   .avatar {
     border: 2px solid transparent;
     border-radius: 100%;
-    background: linear-gradient(0deg, rgb(189, 218, 233), #85d4ff) border-box;
+    // background: linear-gradient(0deg, rgb(189, 218, 233), #85d4ff) border-box;
   }
 
   .avatar-sus {

@@ -17,6 +17,7 @@ export default defineConfig({
           "github",
           "twitch",
           "steam",
+          "bluesky",
         ],
         "simple-icons": ["anilist"],
         twemoji: ["paw-prints", "snowflake"],
