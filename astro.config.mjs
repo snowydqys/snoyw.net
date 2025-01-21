@@ -19,7 +19,7 @@ export default defineConfig({
           "steam",
           "bluesky",
         ],
-        "simple-icons": ["anilist"],
+        "simple-icons": ["anilist", "myanimelist", "kitsu"],
         twemoji: ["paw-prints", "snowflake"],
       },
     }),
