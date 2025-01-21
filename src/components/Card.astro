@@ -1,4 +1,10 @@
 ---
+export enum ActivityLevel {
+  Low = "Not Very Active",
+  Medium = "Sometimes Active",
+  High = "Very Active",
+}
+
 interface Props {
   title: string;
   body: string;
@@ -6,10 +12,18 @@ interface Props {
   icon?: string;
   customAccent?: string;
   customAccentLight?: string;
+  activityLevel?: ActivityLevel;
 }
 
-const { href, title, body, icon, customAccent, customAccentLight } =
-  Astro.props;
+const {
+  href,
+  title,
+  body,
+  icon,
+  customAccent,
+  customAccentLight,
+  activityLevel,
+} = Astro.props;
 import { Icon } from "astro-icon/components";
 
 const accent = customAccent || "136, 58, 234";
@@ -19,7 +33,7 @@ const accentGradient = `linear-gradient(45deg, rgb(${accent}), rgb(${accentLight
 
 <li class="link-card">
   <a href={href}>
-    <div class="grid grid-cols-[auto_1fr] justify-center gap-2">
+    <div class="grid grid-cols-[auto_1fr] justify-center gap-2 relative">
       <Icon name={icon || "mdi:web"} size={24} />
       <div>
         <h2>
@@ -30,6 +44,21 @@ const accentGradient = `linear-gradient(45deg, rgb(${accent}), rgb(${accentLight
           {body}
         </p>
       </div>
+      {
+        activityLevel && (
+          <span
+            class={"absolute top-0 right-0 rounded-lg px-2 py-1 text-xs border-[1px] " +
+              (activityLevel === ActivityLevel.High
+                ? "bg-green-900 border-green-500"
+                : activityLevel === ActivityLevel.Medium
+                  ? "bg-yellow-900 border-yellow-500"
+                  : "bg-red-900 border-red-500")}
+            style=
+          >
+            {activityLevel}
+          </span>
+        )
+      }
     </div>
   </a>
 </li>

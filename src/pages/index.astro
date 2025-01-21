@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Card, { ActivityLevel } from "../components/Card.astro";
 import HorizontalSeparator from "../components/HorizontalSeparator.astro";
 
 import fuwawapfp from "../assets/fuwawa_icomochi_kryomel_pfp.png";
@@ -56,12 +56,14 @@ import { Image } from "astro:assets";
         icon="fa6-brands:discord"
         customAccent="88,101,242"
         customAccentLight="160,167,248"
+        activityLevel={ActivityLevel.High}
       />
       <Card
         href="mailto:snowydqys@duck.com"
         title="Email - snowydqys@duck.com"
         body="you can also contact me via email, if you prefer (might take a while to respond)"
         icon="mdi:email"
+        activityLevel={ActivityLevel.Medium}
       />
 
       <HorizontalSeparator>Other Socials</HorizontalSeparator>
@@ -73,6 +75,7 @@ import { Image } from "astro:assets";
         icon="fa6-brands:bluesky"
         customAccent="0, 133, 255"
         customAccentLight="189,223,255"
+        activityLevel={ActivityLevel.Low}
       />
       <Card
         href="https://u.snoyw.net/twitter"
