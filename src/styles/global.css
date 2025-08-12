@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.fwmc-global-image {
+  @apply max-w-[25vw] max-h-[15vh] opacity-100 bottom-0 right-0 z-[9999];
+}
+
+.fwmc-global-link {
+  @apply fixed bottom-0 right-0 z-[9999];
+}
