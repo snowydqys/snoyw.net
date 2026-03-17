@@ -10,8 +10,8 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
 ---
 
 <Layout
-  title="snowydqys"
-  description="hii im snowydqys, your amateur anime degenerate!!"
+  title="snoyw / snowydqys"
+  description="hii im snoyw, an average anime degenerate and vtuber enthusiast!"
   url="https://snoyw.net"
 >
   <main class="w-full flex flex-col gap-4 items-center text-white">
@@ -22,26 +22,26 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
       title="Fuwawa Avatar; art by Icomochi, edit by Kryomel"
     />
     <div class="flex flex-col gap-1 items-center">
-      <h1 class="text-3xl lg:text-4xl font-bold">snowydqys</h1>
+      <h1 class="text-3xl lg:text-4xl font-bold fuwamoco-text">snowydqys</h1>
       <h2
         id="sub-heading"
         class="text-sm lg:text-base italic opacity-60"
         title="Different ways of calling me"
       >
-        "snowy", "snoyw", "snow"
+        mostly goes by "snoyw"
       </h2>
     </div>
     <p
       id="main-text"
       class="text-wrap max-w-4xl text-center text-base lg:text-lg"
     >
-      hii im snowy, your average amateur anime degenerate!!
+      hii im snoyw, an average anime degenerate and vtuber enthusiast!
       <br />
-      i like to watch anime, play games, and code in my free time.
+      i like to watch anime, play casual games, and code in my free time.
       <br />
       i also watch vtubers, with my kami oshi being <a
         href="https://u.snoyw.net/fwmc"
-        class="fuwamoco-link">FUWAMOCO</a
+        class="fuwamoco-text fuwamoco-underline">FUWAMOCO</a
       >.
       <br />
       feel free to contact me and say hi!! BAU BAU!!
@@ -79,30 +79,75 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
       <Card
         href="https://u.snoyw.net/discord"
         title="Discord - @snowydqys"
-        body="my discord account, where you can add me as a friend!!"
+        body="my discord account, where you can feel free to add me as a friend!"
         icon="fa6-brands:discord"
         customAccent="88,101,242"
         customAccentLight="160,167,248"
         activityLevel={ActivityLevel.High}
       />
       <Card
-        href="mailto:snowydqys@duck.com"
-        title="Email - snowydqys@duck.com"
-        body="you can also contact me via email, if you prefer (might take a while to respond)"
+        href="mailto:contact@snoyw.net"
+        title="Email - contact@snoyw.net"
+        body="you can also contact me via email, if you prefer"
         icon="mdi:email"
         activityLevel={ActivityLevel.High}
+      />
+      <Card
+        href="https://u.snoyw.net/matrix"
+        title="Matrix - @snoyw:snoyw.net"
+        body="still getting used to this but you can also contact me here if you want"
+        icon="ph:matrix-logo"
+        customAccent="0, 0, 0"
+        customAccentLight="125, 125, 125"
+        activityLevel={ActivityLevel.Medium}
       />
 
       <HorizontalSeparator>Other Socials</HorizontalSeparator>
 
       <Card
-        href="https://u.snoyw.net/bsky"
-        title="Bluesky - @snoyw.net"
-        body="my new bluesky account, where i go to avoid the X (formerly Twitter) drama"
-        icon="fa6-brands:bluesky"
-        customAccent="0, 133, 255"
-        customAccentLight="189,223,255"
-        activityLevel={ActivityLevel.Low}
+        href="https://u.snoyw.net/steam"
+        title="Steam - snowydqys"
+        body="i play games (you are not allowed to judge me for my obsession with the NEKOPARA franchise)"
+        icon="fa6-brands:steam"
+        customAccent="0,173,238"
+        customAccentLight="179,235,255"
+        activityLevel={ActivityLevel.High}
+      />
+      <Card
+        href="https://u.snoyw.net/youtube"
+        title="YouTube - @snowydqys"
+        body="i don't upload but i use this to watch vtuber clips and stuff"
+        icon="fa6-brands:youtube"
+        customAccent="255,0,0"
+        customAccentLight="200,153,153"
+        activityLevel={ActivityLevel.High}
+      />
+      <Card
+        href="https://u.snoyw.net/anilist"
+        title="AniList - @snowydqys"
+        body="where i keep track of the anime i've watched (mostly automated)"
+        icon="simple-icons:anilist"
+        customAccent="2,169,255"
+        customAccentLight="200,245,255"
+        activityLevel={ActivityLevel.Medium}
+      />
+      <Card
+        href="https://u.snoyw.net/mfc"
+        title="MyFigureCollection - @snowydqys"
+        body="see how much money i waste on anime figures and other merchandise"
+        icon="mfc"
+        customAccent="89,166,84"
+        customAccentLight="178,247,173"
+        activityLevel={ActivityLevel.Medium}
+      />
+      <Card
+        href="https://u.snoyw.net/reddit"
+        title="Reddit - @snowyniqhts"
+        body="i mostly lurk and upvote stuff. not very active here. (had to go with niqhts cause dqys was taken)"
+        icon="fa6-brands:reddit-alien"
+        customAccent="255,69,0"
+        customAccentLight="255,210,194"
+        activityLevel={ActivityLevel.Medium}
       />
       <Card
         href="https://u.snoyw.net/twitter"
@@ -114,48 +159,12 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         activityLevel={ActivityLevel.Low}
       />
       <Card
-        href="https://u.snoyw.net/steam"
-        title="Steam - snowydqys"
-        body="i play games sometimes (you are not allowed to judge me for my obsession with the NEKOPARA franchise)"
-        icon="fa6-brands:steam"
-        customAccent="0,173,238"
-        customAccentLight="179,235,255"
-        activityLevel={ActivityLevel.High}
-      />
-      <Card
-        href="https://u.snoyw.net/anilist"
-        title="AniList - @snowydqys"
-        body="where i keep track of the anime i've watched (automated). this is the one i use the most"
-        icon="simple-icons:anilist"
-        customAccent="2,169,255"
-        customAccentLight="200,245,255"
-        activityLevel={ActivityLevel.Medium}
-      />
-      <Card
-        href="https://u.snoyw.net/mfc"
-        title="MyFigureCollection - @snowydqys"
-        body="see how much money ive wasted on anime figures and other stuff"
-        icon="mfc"
-        customAccent="89,166,84"
-        customAccentLight="178,247,173"
-        activityLevel={ActivityLevel.Medium}
-      />
-      <Card
-        href="https://u.snoyw.net/kitsu"
-        title="Kitsu - @snowydqys"
-        body="backup of my anime list (automated). i use this occasionally"
-        icon="simple-icons:kitsu"
-        customAccent="2,169,255"
-        customAccentLight="200,245,255"
-        activityLevel={ActivityLevel.Low}
-      />
-      <Card
-        href="https://u.snoyw.net/mal"
-        title="MyAnimeList - @snowydqys"
-        body="backup to the backup of my anime list (automated). i don't use this like at all"
-        icon="simple-icons:myanimelist"
-        customAccent="2,169,255"
-        customAccentLight="200,245,255"
+        href="https://u.snoyw.net/bsky"
+        title="Bluesky - @snoyw.net"
+        body="my bluesky account, dont use this anymore to be honest. also used it to like and retweet vtuber stuff"
+        icon="fa6-brands:bluesky"
+        customAccent="0, 133, 255"
+        customAccentLight="189,223,255"
         activityLevel={ActivityLevel.Low}
       />
       <Card
@@ -168,15 +177,6 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         activityLevel={ActivityLevel.Low}
       />
       <Card
-        href="https://u.snoyw.net/youtube"
-        title="YouTube - @snowydqys"
-        body="i don't upload but i use this to watch vtuber clips and stuff"
-        icon="fa6-brands:youtube"
-        customAccent="255,0,0"
-        customAccentLight="200,153,153"
-        activityLevel={ActivityLevel.High}
-      />
-      <Card
         href="https://u.snoyw.net/twitch"
         title="Twitch - @snowydqys"
         body="i watch vtubers on rare occasions here. i mostly watch vtubers on youtube because twitch is bad"
@@ -186,13 +186,22 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         activityLevel={ActivityLevel.Low}
       />
       <Card
-        href="https://u.snoyw.net/reddit"
-        title="Reddit - @snowyniqhts"
-        body='i mostly lurk and upvote stuff. not very active here. (also to the person who took the username "snowydqys" on reddit, i will find you~ <3)'
-        icon="fa6-brands:reddit-alien"
-        customAccent="255,69,0"
-        customAccentLight="255,210,194"
-        activityLevel={ActivityLevel.Medium}
+        href="https://u.snoyw.net/kitsu"
+        title="Kitsu - @snowydqys"
+        body="backup of my anime list (automated)."
+        icon="simple-icons:kitsu"
+        customAccent="2,169,255"
+        customAccentLight="200,245,255"
+        activityLevel={ActivityLevel.Low}
+      />
+      <Card
+        href="https://u.snoyw.net/mal"
+        title="MyAnimeList - @snowydqys"
+        body="backup to the backup of my anime list (automated)."
+        icon="simple-icons:myanimelist"
+        customAccent="2,169,255"
+        customAccentLight="200,245,255"
+        activityLevel={ActivityLevel.Low}
       />
     </ul>
   </main>
@@ -280,7 +289,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
     background: linear-gradient(0deg, #ff0000, #ffafaf) border-box;
   }
 
-  .fuwamoco-link {
+  .fuwamoco-text {
     /* text gradient */
     background: linear-gradient(
       45deg,
@@ -291,7 +300,9 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+  }
 
+  .fuwamoco-underline {
     /* underline gradient */
     position: relative;
     &::before {

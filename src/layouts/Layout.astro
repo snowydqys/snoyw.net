@@ -28,7 +28,7 @@ const { title, description, url } = Astro.props;
     <meta
       name="description"
       content={description ||
-        "the website of snowydqys, your average amateur anime degenerate!!"}
+        "the website of snoyw, an average anime degenerate and vtuber enthusiast!"}
     />
 
     <meta property="og:type" content="website" />
@@ -37,7 +37,7 @@ const { title, description, url } = Astro.props;
     <meta
       property="og:description"
       content={description ||
-        "the website of snowydqys, your average amateur anime degenerate!!"}
+        "the website of snoyw, an average anime degenerate and vtuber enthusiast!"}
     />
 
     <meta property="twitter:card" content="summary_large_image" />
@@ -46,7 +46,7 @@ const { title, description, url } = Astro.props;
     <meta
       property="twitter:description"
       content={description ||
-        "the website of snowydqys, your average amateur anime degenerate!!"}
+        "the website of snoyw, an average anime degenerate and vtuber enthusiast!"}
     />
   </head>
   <body>
@@ -56,11 +56,8 @@ const { title, description, url } = Astro.props;
     <footer class="text-center text-white text-sm m-8 flex flex-col gap-1">
       <p>
         made with{" "}
-        <a href="https://astro.build" class="underline"> astro</a>{" "} • hosted
-        on{" "}
-        <a href="https://pages.cloudflare.com" class="underline">
-          cloudflare pages</a
-        >
+        <a href="https://astro.build" class="underline"> astro</a>{" "} • self-hosted
+        by snoyw
       </p>
       <p>
         <a href="https://github.com/snowydqys/snoyw.net" class="underline">
@@ -84,9 +81,9 @@ const { title, description, url } = Astro.props;
     <!-- rybbit -->
     <script
       src="https://analytics.snoyw.net/api/script.js"
+      is:inline
       data-site-id="54183075192f"
-      defer
-    ></script>
+      defer></script>
     <!-- End rybbit Code -->
   </body>
   <style is:global>

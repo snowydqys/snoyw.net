@@ -20,6 +20,7 @@ export default defineConfig({
           "steam",
           "bluesky",
         ],
+        "ph": ["matrix-logo"],
         "simple-icons": ["anilist", "myanimelist", "kitsu"],
         twemoji: ["paw-prints", "snowflake"],
       },
