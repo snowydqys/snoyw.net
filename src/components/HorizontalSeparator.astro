@@ -3,13 +3,28 @@
   <div>
     <slot />
   </div>
-  <div class="horizontal-separator"></div>
+  <div class="horizontal-separator-backwards"></div>
 </div>
 
-<style>
+<style lang="scss">
   .horizontal-separator {
     height: 1px;
-    background-color: white;
+    background: linear-gradient(
+      45deg,
+      rgba(86, 180, 254, 1) 0%,
+      rgba(171, 169, 226, 1) 50%,
+      rgba(255, 157, 198, 1) 100%
+    );
+    opacity: 0.8;
+  }
+  .horizontal-separator-backwards {
+    height: 1px;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 157, 198, 1) 0%,
+      rgba(171, 169, 226, 1) 50%,
+      rgba(86, 180, 254, 1) 100%
+    );
     opacity: 0.8;
   }
 </style>
