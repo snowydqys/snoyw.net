@@ -29,6 +29,7 @@ export default defineConfig({
 
   image: {
     domains: ["cdn.snoyw.net"],
+    remotePatterns: [{ protocol: "https" }],
   },
 
   vite: {

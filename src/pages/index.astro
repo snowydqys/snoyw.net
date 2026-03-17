@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import HorizontalSeparator from "../components/HorizontalSeparator.astro";
 
-import fuwawapfp from "../assets/fuwawa_icomochi_kryomel_pfp.png";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import Badge, { ActivityLevel } from "../components/Badge.astro";
@@ -16,10 +15,12 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
 >
   <main class="w-full flex flex-col gap-4 items-center text-white">
     <Image
-      src={fuwawapfp}
+      src="https://cdn.snoyw.net/snoyw.net/pfps/fuwawa_icomochi_kryomel_pfp.png"
       alt="Fuwawa Avatar; art by Icomochi, edit by Kryomel"
       class="w-48 h-48 lg:w-64 lg:h-64 rounded-full mt-8 avatar"
       title="Fuwawa Avatar; art by Icomochi, edit by Kryomel"
+      width={256}
+      height={256}
     />
     <div class="flex flex-col gap-1 items-center">
       <h1 class="text-3xl lg:text-4xl font-bold fuwamoco-text">snowydqys</h1>
@@ -212,7 +213,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
 
   const susify = () => {
     if (!susified) {
-      const audio = new Audio("/sus.mp3");
+      const audio = new Audio("https://cdn.snoyw.net/snoyw.net/sus.mp3");
       audio.play();
 
       susified = true;
@@ -222,7 +223,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
       ) as NodeListOf<HTMLElement>;
 
       snows.forEach((snow) => {
-        snow.style.background = `url("/sus.svg")`;
+        snow.style.background = `url("https://cdn.snoyw.net/snoyw.net/sus.svg")`;
       });
 
       const snowWrapper = document.querySelector(
@@ -242,7 +243,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
       avatar.classList.add("avatar-sus");
       avatar.classList.remove("avatar");
     } else {
-      const audio = new Audio("/amongus.mp3");
+      const audio = new Audio("https://cdn.snoyw.net/snoyw.net/amongus.mp3");
       audio.volume = 0.5;
       audio.play();
     }
