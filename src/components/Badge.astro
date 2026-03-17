@@ -1,0 +1,66 @@
+---
+export enum ActivityLevel {
+  Low = "Not Very Active",
+  Medium = "Sometimes Active",
+  High = "Very Active",
+}
+
+const { activityLevel, className = "", muted = false } = Astro.props;
+
+function getColorClasses(activityLevel: ActivityLevel, muted: boolean) {
+  const classes: string[] = [];
+
+  switch (activityLevel) {
+    case ActivityLevel.High:
+      classes.push("border-green-500");
+      if (muted) {
+        classes.push("bg-green-950");
+      } else {
+        classes.push("bg-green-900");
+      }
+      break;
+    case ActivityLevel.Medium:
+      classes.push("border-yellow-500");
+      if (muted) {
+        classes.push("bg-yellow-950");
+      } else {
+        classes.push("bg-yellow-900");
+      }
+      break;
+    case ActivityLevel.Low:
+      classes.push("border-red-500");
+      if (muted) {
+        classes.push("bg-red-950");
+      } else {
+        classes.push("bg-red-900");
+      }
+      break;
+    default:
+      classes.push("border-gray-500");
+      if (muted) {
+        classes.push("bg-gray-950");
+      } else {
+        classes.push("bg-gray-900");
+      }
+      break;
+  }
+
+  return classes.join(" ");
+}
+
+function combineClassNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}
+---
+
+<span
+  class={combineClassNames(
+    className,
+    "rounded-lg px-1 py-1 text-xs border",
+    getColorClasses(activityLevel, muted),
+  )}
+  style=""
+  title={activityLevel}
+>
+  <slot />
+</span>

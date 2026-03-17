@@ -6,6 +6,7 @@ import HorizontalSeparator from "../components/HorizontalSeparator.astro";
 import fuwawapfp from "../assets/fuwawa_icomochi_kryomel_pfp.png";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import Badge, { ActivityLevel } from "../components/Badge.astro";
 ---
 
 <Layout
@@ -46,6 +47,32 @@ import { Image } from "astro:assets";
       feel free to contact me and say hi!! BAU BAU!!
       <Icon name="twemoji:paw-prints" class="inline" size={24} />
     </p>
+    <div class="flex gap-2 flex-wrap justify-center items-center">
+      <Badge
+        activityLevel={ActivityLevel.High}
+        className="flex justify-center items-center gap-1"
+        muted={true}
+      >
+        <Badge activityLevel={ActivityLevel.High} />
+        {ActivityLevel.High}
+      </Badge>
+      <Badge
+        activityLevel={ActivityLevel.Medium}
+        className="flex justify-center items-center gap-1"
+        muted={true}
+      >
+        <Badge activityLevel={ActivityLevel.Medium} />
+        {ActivityLevel.Medium}
+      </Badge>
+      <Badge
+        activityLevel={ActivityLevel.Low}
+        className="flex justify-center items-center gap-1"
+        muted={true}
+      >
+        <Badge activityLevel={ActivityLevel.Low} />
+        {ActivityLevel.Low}
+      </Badge>
+    </div>
     <ul role="list" class="flex flex-col gap-4">
       <HorizontalSeparator>Main Contacts</HorizontalSeparator>
 
@@ -56,12 +83,14 @@ import { Image } from "astro:assets";
         icon="fa6-brands:discord"
         customAccent="88,101,242"
         customAccentLight="160,167,248"
+        activityLevel={ActivityLevel.High}
       />
       <Card
         href="mailto:snowydqys@duck.com"
         title="Email - snowydqys@duck.com"
         body="you can also contact me via email, if you prefer (might take a while to respond)"
         icon="mdi:email"
+        activityLevel={ActivityLevel.High}
       />
 
       <HorizontalSeparator>Other Socials</HorizontalSeparator>
@@ -73,6 +102,7 @@ import { Image } from "astro:assets";
         icon="fa6-brands:bluesky"
         customAccent="0, 133, 255"
         customAccentLight="189,223,255"
+        activityLevel={ActivityLevel.Low}
       />
       <Card
         href="https://u.snoyw.net/twitter"
@@ -81,6 +111,7 @@ import { Image } from "astro:assets";
         icon="fa6-brands:x-twitter"
         customAccent="0,0,0"
         customAccentLight="125,125,125"
+        activityLevel={ActivityLevel.Low}
       />
       <Card
         href="https://u.snoyw.net/steam"
@@ -89,6 +120,7 @@ import { Image } from "astro:assets";
         icon="fa6-brands:steam"
         customAccent="0,173,238"
         customAccentLight="179,235,255"
+        activityLevel={ActivityLevel.High}
       />
       <Card
         href="https://u.snoyw.net/anilist"
@@ -97,6 +129,7 @@ import { Image } from "astro:assets";
         icon="simple-icons:anilist"
         customAccent="2,169,255"
         customAccentLight="200,245,255"
+        activityLevel={ActivityLevel.Medium}
       />
       <Card
         href="https://u.snoyw.net/mfc"
@@ -105,6 +138,7 @@ import { Image } from "astro:assets";
         icon="mfc"
         customAccent="89,166,84"
         customAccentLight="178,247,173"
+        activityLevel={ActivityLevel.Medium}
       />
       <Card
         href="https://u.snoyw.net/kitsu"
@@ -113,6 +147,7 @@ import { Image } from "astro:assets";
         icon="simple-icons:kitsu"
         customAccent="2,169,255"
         customAccentLight="200,245,255"
+        activityLevel={ActivityLevel.Low}
       />
       <Card
         href="https://u.snoyw.net/mal"
@@ -121,6 +156,7 @@ import { Image } from "astro:assets";
         icon="simple-icons:myanimelist"
         customAccent="2,169,255"
         customAccentLight="200,245,255"
+        activityLevel={ActivityLevel.Low}
       />
       <Card
         href="https://u.snoyw.net/github"
@@ -129,6 +165,7 @@ import { Image } from "astro:assets";
         icon="fa6-brands:github"
         customAccent="23,21,21"
         customAccentLight="177,169,169"
+        activityLevel={ActivityLevel.Low}
       />
       <Card
         href="https://u.snoyw.net/youtube"
@@ -137,6 +174,7 @@ import { Image } from "astro:assets";
         icon="fa6-brands:youtube"
         customAccent="255,0,0"
         customAccentLight="200,153,153"
+        activityLevel={ActivityLevel.High}
       />
       <Card
         href="https://u.snoyw.net/twitch"
@@ -145,6 +183,7 @@ import { Image } from "astro:assets";
         icon="fa6-brands:twitch"
         customAccent="145,70,255"
         customAccentLight="203,168,255"
+        activityLevel={ActivityLevel.Low}
       />
       <Card
         href="https://u.snoyw.net/reddit"
@@ -153,6 +192,7 @@ import { Image } from "astro:assets";
         icon="fa6-brands:reddit-alien"
         customAccent="255,69,0"
         customAccentLight="255,210,194"
+        activityLevel={ActivityLevel.Medium}
       />
     </ul>
   </main>
@@ -169,7 +209,7 @@ import { Image } from "astro:assets";
       susified = true;
 
       const snows = document.querySelectorAll(
-        ".snow"
+        ".snow",
       ) as NodeListOf<HTMLElement>;
 
       snows.forEach((snow) => {
@@ -177,7 +217,7 @@ import { Image } from "astro:assets";
       });
 
       const snowWrapper = document.querySelector(
-        ".snow-wrapper"
+        ".snow-wrapper",
       ) as HTMLElement;
 
       snowWrapper.style.filter = "drop-shadow(0 0 10px #f00000)";

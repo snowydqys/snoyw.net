@@ -1,4 +1,17 @@
 ---
+const {
+  href,
+  title,
+  body,
+  icon,
+  customAccent,
+  customAccentLight,
+  activityLevel,
+} = Astro.props;
+import { Icon } from "astro-icon/components";
+import type { ActivityLevel } from "./Badge.astro";
+import Badge from "./Badge.astro";
+
 interface Props {
   title: string;
   body: string;
@@ -6,21 +19,28 @@ interface Props {
   icon?: string;
   customAccent?: string;
   customAccentLight?: string;
+  activityLevel?: ActivityLevel;
 }
-
-const { href, title, body, icon, customAccent, customAccentLight } =
-  Astro.props;
-import { Icon } from "astro-icon/components";
 
 const accent = customAccent || "136, 58, 234";
 const accentLight = customAccentLight || "224, 204, 250";
 const accentGradient = `linear-gradient(45deg, rgb(${accent}), rgb(${accentLight}) 30%, white 60%);`;
 ---
 
-<li class="link-card">
+<li class="link-card relative">
   <a href={href}>
     <div class="grid grid-cols-[auto_1fr] justify-center gap-2">
-      <Icon name={icon || "mdi:web"} size={24} />
+      <div class="relative w-6 h-6">
+        <Icon name={icon || "mdi:web"} size={24} />
+        {
+          activityLevel && (
+            <Badge
+              activityLevel={activityLevel}
+              className="absolute top-2 -left-4"
+            />
+          )
+        }
+      </div>
       <div>
         <h2>
           {title}
