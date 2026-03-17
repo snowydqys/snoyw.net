@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      tags:
+        - snoyw.net-landing:latest
+    container_name: snoyw.net
+    restart: unless-stopped
+    ports:
+      - "4321:4321"
