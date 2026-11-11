@@ -1,4 +1,11 @@
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - esbuild
-  - sharp
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - '@astrojs/internal-helpers@0.13.2'
+  - '@astrojs/markdown-satteri@0.4.8'
+  - '@astrojs/node@11.1.12'
+  - '@astrojs/runtime@0.1.0'
+  - '@astrojs/vite-plugin-astro@0.1.1'
+  - astro@7.4.10
