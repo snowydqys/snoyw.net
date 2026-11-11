@@ -22,7 +22,7 @@ export default defineConfig({
         ],
         "ph": ["matrix-logo"],
         "simple-icons": ["anilist", "myanimelist", "kitsu"],
-        twemoji: ["paw-prints", "snowflake"],
+        twemoji: ["paw-prints", "snowflake", "blue-heart", "pink-heart", "ribbon", "chocolate-bar", "kitchen-knife", "white-heart", "rice-ball"],
       },
     }),
   ],

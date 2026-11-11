@@ -27,8 +27,14 @@ const accentLight = customAccentLight || "224, 204, 250";
 const accentGradient = `linear-gradient(45deg, rgb(${accent}), rgb(${accentLight}) 30%, white 60%);`;
 ---
 
-<li class="link-card relative">
-  <a href={href}>
+<li class="link-card relative group rounded-lg">
+  <div class="bg-[#23262d] absolute top-0 left-0 w-full h-full rounded-lg opacity-80"></div>
+  <div class="social-icon-wrapper invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-[opacity,visibility] duration-300 rounded-lg">
+    {Array.from({ length: 16 }).map(_ => (
+      <Icon size={16} name={icon || "mdi:web"} class="social-icon opacity-40"></Icon>
+    ))}
+  </div>
+  <a href={href} class="z-10 rounded-lg">
     <div class="grid grid-cols-[auto_1fr] justify-center gap-2">
       <div class="relative w-6 h-6">
         <Icon name={icon || "mdi:web"} size={24} />
@@ -41,7 +47,7 @@ const accentGradient = `linear-gradient(45deg, rgb(${accent}), rgb(${accentLight
           )
         }
       </div>
-      <div>
+      <div class="text-shadow-2xs">
         <h2>
           {title}
           <span>&rarr;</span>
@@ -59,10 +65,8 @@ const accentGradient = `linear-gradient(45deg, rgb(${accent}), rgb(${accentLight
     list-style: none;
     display: flex;
     padding: 1px;
-    background-color: #23262d;
     background-image: none;
     background-size: 400%;
-    border-radius: 7px;
     background-position: 100%;
     transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -72,10 +76,7 @@ const accentGradient = `linear-gradient(45deg, rgb(${accent}), rgb(${accentLight
     text-decoration: none;
     line-height: 1.4;
     padding: calc(1.5rem - 1px);
-    border-radius: 8px;
     color: white;
-    background-color: #23262d;
-    opacity: 0.8;
   }
   h2 {
     margin: 0;
@@ -94,3 +95,64 @@ const accentGradient = `linear-gradient(45deg, rgb(${accent}), rgb(${accentLight
     color: rgb(var(--accentLight));
   }
 </style>
+
+<style lang="scss">
+  @use "sass:math";
+
+  .social-icon-wrapper {
+    position: absolute;
+    inset: 0;
+    filter: drop-shadow(0 0 10px white);
+    overflow: hidden;
+    pointer-events: none;
+    container-type: size;
+    z-index: 10;
+  }
+
+  @function random_range($min, $max) {
+    $rand: math.random();
+    $random_range: $min + math.floor($rand * (($max - $min) + 1));
+    @return $random_range;
+  }
+
+  .social-icon {
+    $total: 16;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+
+    @for $i from 1 through $total {
+      $depth: calc(random_range(20, 100) / 100);
+      $opacity: calc(random_range(10, 40) / 100);
+      $size: math.round(10 + $depth * 16) * 1px;
+      $random-x: math.random(10000) * 0.01%;
+      $duration: calc(3s / (0.35 + $depth * 0.9));
+      $delay: math.random(1400) * -0.01s;
+
+      &:nth-child(#{$i}) {
+        left: calc(#{$random-x} - #{$size * 0.5});
+        width: $size;
+        height: $size;
+        opacity: 0.12 + $opacity * 0.45;
+        animation: social-icon-rise $duration $delay linear infinite;
+      }
+    }
+  }
+
+  @keyframes social-icon-rise {
+    from {
+      transform: translateY(calc(100cqh + 28px));
+    }
+    to {
+      transform: translateY(-28px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .social-icon {
+      animation: none;
+    }
+  }
+</style>
+

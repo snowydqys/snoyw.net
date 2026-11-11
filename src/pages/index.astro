@@ -1,11 +1,47 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import SocialCard from "../components/SocialCard.astro";
 import HorizontalSeparator from "../components/HorizontalSeparator.astro";
 
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import Badge, { ActivityLevel } from "../components/Badge.astro";
+
+const oshiMarks = [
+  {
+    name: "ShiroNekoNya",
+    href: "/oshis#ShiroNekoNya",
+    title: "Cathusbands!",
+    icons: ["twemoji:white-heart", "twemoji:paw-prints"],
+  },
+  {
+    name: "FUWAMOCO",
+    href: "/oshis#FUWAMOCO",
+    title: "Ruffians!",
+    icons: [
+      "twemoji:paw-prints",
+      "twemoji:blue-heart",
+      "twemoji:pink-heart",
+      "twemoji:paw-prints",
+    ],
+  },
+  {
+    name: "Fallenshadow",
+    href: "/oshis#Fallenshadow",
+    title: "Shondophrenics!",
+    icons: [
+      "twemoji:ribbon",
+      "twemoji:chocolate-bar",
+      "twemoji:kitchen-knife",
+    ],
+  },
+  {
+    name: "Nekomata Okayu",
+    href: "/oshis#NekomataOkayu",
+    title: "Onigiryaa!",
+    icons: ["twemoji:rice-ball"],
+  },
+];
 ---
 
 <Layout
@@ -32,20 +68,56 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         mostly goes by "snoyw"
       </h2>
     </div>
+    <div
+      class="oshi-scroller flex items-center overflow-hidden w-64 max-w-[85vw] h-8"
+    >
+      {
+        Array.from({ length: 3 }).map((_, groupIndex) => (
+          <div
+            class="oshi-group flex items-center gap-2 pr-2 shrink-0"
+          >
+            {oshiMarks.map((oshi) => (
+              <>
+                <a
+                  href={oshi.href}
+                >
+                  <div
+                    class="flex items-center justify-center h-6 gap-0.5 hover:animate-pulse"
+                    title={oshi.title}
+                  >
+                    {oshi.icons.map((icon) => (
+                      <Icon
+                        name={icon as any}
+                        class="inline animate-wiggle"
+                        size={24}
+                      />
+                    ))}
+                  </div>
+                </a>
+
+                <div class="flex items-center justify-center rounded-lg opacity-60 h-2">
+                  <Icon name="twemoji:snowflake" class="inline" size={8} />
+                </div>
+              </>
+            ))}
+          </div>
+        ))
+      }
+    </div>
     <p
       id="main-text"
       class="text-wrap max-w-4xl text-center text-base lg:text-lg"
     >
       hii im snoyw, an average anime degenerate and vtuber enthusiast!
       <br />
-      i like to watch anime, play casual games, and code in my free time.
+      i like to watch anime, play casual games, and <span class="fuwamoco-text bau-bau">BAU BAU</span> in my free time.
       <br />
       i also watch vtubers, with my kami oshi being <a
         href="https://u.snoyw.net/fwmc"
         class="fuwamoco-text fuwamoco-underline">FUWAMOCO</a
-      >.
+      >, but i have <a href="/oshis" class="underline">other oshis too</a>!
       <br />
-      feel free to contact me and say hi!! BAU BAU!!
+      feel free to contact me and say hi!! <span class="fuwamoco-text bau-bau">BAU BAU</span>!!
       <Icon name="twemoji:paw-prints" class="inline" size={24} />
     </p>
     <div class="flex gap-2 flex-wrap justify-center items-center">
@@ -77,7 +149,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
     <ul role="list" class="flex flex-col gap-4">
       <HorizontalSeparator>Main Contacts</HorizontalSeparator>
 
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/discord"
         title="Discord - @snowydqys"
         body="my discord account, where you can feel free to add me as a friend!"
@@ -86,14 +158,14 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="160,167,248"
         activityLevel={ActivityLevel.High}
       />
-      <Card
+      <SocialCard
         href="mailto:contact@snoyw.net"
         title="Email - contact@snoyw.net"
         body="you can also contact me via email, if you prefer"
         icon="mdi:email"
         activityLevel={ActivityLevel.High}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/matrix"
         title="Matrix - @snoyw:snoyw.net"
         body="still getting used to this but you can also contact me here if you want"
@@ -105,7 +177,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
 
       <HorizontalSeparator>Other Socials</HorizontalSeparator>
 
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/steam"
         title="Steam - snowydqys"
         body="i play games (you are not allowed to judge me for my obsession with the NEKOPARA franchise)"
@@ -114,7 +186,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="179,235,255"
         activityLevel={ActivityLevel.High}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/youtube"
         title="YouTube - @snowydqys"
         body="i don't upload but i use this to watch vtuber clips and stuff"
@@ -123,7 +195,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="200,153,153"
         activityLevel={ActivityLevel.High}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/anilist"
         title="AniList - @snowydqys"
         body="where i keep track of the anime i've watched (mostly automated)"
@@ -132,7 +204,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="200,245,255"
         activityLevel={ActivityLevel.Medium}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/mfc"
         title="MyFigureCollection - @snowydqys"
         body="see how much money i waste on anime figures and other merchandise"
@@ -141,7 +213,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="178,247,173"
         activityLevel={ActivityLevel.Medium}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/reddit"
         title="Reddit - @snowyniqhts"
         body="i mostly lurk and upvote stuff. not very active here. (had to go with niqhts cause dqys was taken)"
@@ -150,7 +222,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="255,210,194"
         activityLevel={ActivityLevel.Medium}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/twitter"
         title="X - @snowydqys"
         body="my X (formerly Twitter) account where i mostly like and retweet vtuber stuff"
@@ -159,7 +231,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="125,125,125"
         activityLevel={ActivityLevel.Low}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/bsky"
         title="Bluesky - @snoyw.net"
         body="my bluesky account, dont use this anymore to be honest. also used it to like and retweet vtuber stuff"
@@ -168,7 +240,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="189,223,255"
         activityLevel={ActivityLevel.Low}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/github"
         title="GitHub - @snowydqys"
         body="i sometimes store some of my projects and stuff here"
@@ -177,7 +249,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="177,169,169"
         activityLevel={ActivityLevel.Low}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/twitch"
         title="Twitch - @snowydqys"
         body="i watch vtubers on rare occasions here. i mostly watch vtubers on youtube because twitch is bad"
@@ -186,7 +258,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="203,168,255"
         activityLevel={ActivityLevel.Low}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/kitsu"
         title="Kitsu - @snowydqys"
         body="backup of my anime list (automated)."
@@ -195,7 +267,7 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         customAccentLight="200,245,255"
         activityLevel={ActivityLevel.Low}
       />
-      <Card
+      <SocialCard
         href="https://u.snoyw.net/mal"
         title="MyAnimeList - @snowydqys"
         body="backup to the backup of my anime list (automated)."
@@ -277,6 +349,33 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
   });
 </script>
 
+<script>
+  const pools: HTMLAudioElement[][] = Array.from({ length: 5 }, () => []);
+
+  function BAUBAU() {
+    const i = Math.floor(Math.random() * 5);
+    const pool = pools[i];
+    let audio = pool.find((a) => a.paused || a.ended);
+
+    if (!audio) {
+      audio = pool.length < 4
+        ? new Audio(`https://cdn.snoyw.net/snoyw.net/baubau/bau-0${i + 1}.mp3`)
+        : pool.shift()!;
+      pool.push(audio);
+    }
+
+    audio.playbackRate = 2 ** ((Math.random() * 2 - 1) / 12);
+    audio.preservesPitch = false;
+    audio.volume = 0.8 + Math.random() * 0.2;
+    if (audio.readyState > 0) audio.currentTime = 0;
+    audio.play().catch(() => {});
+  }
+
+  for (const baubautext of document.querySelectorAll(".bau-bau")) {
+    baubautext.addEventListener("click", BAUBAU);
+  }
+</script>
+
 <style lang="scss">
   .avatar {
     border: 2px solid transparent;
@@ -319,6 +418,61 @@ import Badge, { ActivityLevel } from "../components/Badge.astro";
         rgba(171, 169, 226, 1) 50%,
         rgba(255, 157, 198, 1) 100%
       );
+    }
+  }
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  .animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .oshi-scroller {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 2rem,
+      black calc(100% - 2rem),
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 2rem,
+      black calc(100% - 2rem),
+      transparent 100%
+    );
+
+    &:hover .oshi-group {
+      animation-play-state: paused;
+    }
+  }
+
+  .oshi-group {
+    animation: oshi-scroll 15s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes oshi-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .oshi-group {
+      animation: none;
     }
   }
 </style>

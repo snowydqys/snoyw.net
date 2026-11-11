@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="snoyw's Avatars"
+  description="a collection of avatars used by snoyw across various platforms."
+  url="https://snoyw.net/avatars"
+>
+  <div class="w-screen h-screen flex flex-col justify-center items-center">
+    <Image
+      src="https://cdn.snoyw.net/snoyw.net/construction.png"
+      alt="Under Construction"
+      class="w-lg h-lg"
+      title="Under Construction"
+      width={512}
+      height={512}
+    />
+  </div>
+</Layout>
